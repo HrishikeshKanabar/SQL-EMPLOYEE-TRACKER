@@ -31,37 +31,37 @@ function appStartOptions(){
 
     ]).then(opt=>{
 
-        console.log(opt);
-        if(opt=='1.) View all the Departments'){
+        console.log(opt.initOptions);
+        if(opt.initOptions=='1.) View all the Departments'){
             helper.alldeps();
-        }else if(opt=='2.) View all roles'){
+        }else if(opt.initOptions=='2.) View all roles'){
             helper.allroles();
-        }else if(opt=='3.) View all employees'){
+        }else if(opt.initOptions=='3.) View all employees'){
             helper.allemployees();
-        }else if(opt=='4.) Add a department'){
+        }else if(opt.initOptions=='4.) Add a department'){
             helper.addDep()
-        }else if(opt=='5.) Add a role'){
+        }else if(opt.initOptions=='5.) Add a role'){
             helper.addRole();
-        }else if(opt=='6.) Add an employee'){
+        }else if(opt.initOptions=='6.) Add an employee'){
             helper.addEmp();
-        }else if(opt=='7.) Update an employee role'){
+        }else if(opt.initOptions=='7.) Update an employee role'){
             helper.updateEmployeeRole();
-        }else if(opt=='8.) Update employee managers'){
+        }else if(opt.initOptions=='8.) Update employee managers'){
             helper.UpdateEmployeeMang()
-        }else if(opt=='9.) View employees by manager'){
+        }else if(opt.initOptions=='9.) View employees by manager'){
             helper.getEmpByMang()
-        }else if(opt=='10.) View employees by department'){
+        }else if(opt.initOptions=='10.) View employees by department'){
             helper.getEmpByDep();
-        }else if(opt=='11.) Delete a department'){
+        }else if(opt.initOptions=='11.) Delete a department'){
             helper.deleteDep();
         }else if(opt=='12.) Delete a role'){
             helper.deleteRole();
-        }else if(opt=='13.) Delete a employee'){
+        }else if(opt.initOptions=='13.) Delete a employee'){
             helper.deleteEmp();
-        }else if(opt=='14.) View the total utilized budget of a department'){
+        }else if(opt.initOptions=='14.) View the total utilized budget of a department'){
             helper.getTotalBudget();
         }else{
-
+               console.log('test');
         }
 
     });
