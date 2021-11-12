@@ -59,7 +59,7 @@ function addRole(){
                 name: "dep",
                 message:"Choose department for the role:",
                 choices: results,
-            },
+            }
         ]).then(val=>{
             //console.log(val.dep);
             let id = getIdByDepartment(results,val.dep);
@@ -73,42 +73,51 @@ function addRole(){
 
 // To get add employee
 function addEmp(){
-
-    conn.db.query('SELECT id,name from role', function (err, results) {
-         console.log(results);
-        conn.db.query('SELECT id,name from employee', function (err, Empres) {
-            console.log(Empres);
+    conn.db.query('SELECT id,title from role;', function (err, results) {
+        //console.log(results);
+        var res=[];
+        for(let tit in results){
+            res.push(results[tit].title);
+        }
+       conn.db.query('SELECT id,first_name from employee;', function (err, resEmp) { 
+           var resE=[];
+           for(let fname in resEmp){
+            resE.push(resEmp[fname].first_name);
+        }
+        //console.log(resDep);  
         inq.prompt([
             {
                 name: "fname",
-                message: "Enter the first name of employee: (Help: Only Alphabets):",
+                message: "Enter the first name of an employee:",
             },
             {
                 name: "lname",
-                message: "Enter the last name of employee (Help: Numbers only):",
+                message: "Enter the last name of an employee:",
             },
             {
                 type: 'list',
                 name: "role",
-                message:"Choose role for the employee:",
-                choices: results,
-            },
-            {
+                message:"Choose role for an Employee:",
+                choices: res,
+            },{
                 type: 'list',
-                name: "dep",
-                message:"Assign manager for the employee:",
-                choices: Empres,
+                name: "manager",
+                message:"Choose manager for an Employee:",
+                choices: resE,
             }
         ]).then(val=>{
-            console.log(val);
            
-            /*conn.db.query('INSERT INTO role SET title=?,salary=?,department_id=?',[val.name,val.salary,id], function (err, results) {
-                console.log("ADDED ROLE TO DATABASE , INSERTED RECORD ID IS :" + results.insertId);
-              });*/
+            let roleId=getRoleIdByTitle(results,val.role);
+            let empId=getEmpIdByFirstName(resEmp,val.manager);
+            conn.db.query('INSERT INTO employee SET first_name=?,last_name=?,role_id=?,manager_id=?',[val.fname,val.lname,roleId,empId], function (err, results) {
+                console.log("ADDED EMPLOYEE TO DATABASE , INSERTED RECORD ID IS :" + results.insertId);
+              });
+            
         });
+    
       });
     });
-
+    
 }
 
 function updateEmployeeRole(){
@@ -154,6 +163,32 @@ function getIdByDepartment(res,depName){
     return id;
     
 }
+
+function getRoleIdByTitle(res,title){
+    var id;
+
+    for(let re in res){
+        if(res[re].title==title){
+            id=res[re].id;
+        }
+    }
+
+    return id;
+}
+
+function getEmpIdByFirstName(res,fname){
+    var id;
+
+    for(let re in res){
+        if(res[re].first_name==fname){
+            id=res[re].id;
+        }
+    }
+
+    return id;
+}
+
+
 
 module.exports = {alldeps,allroles,allemployees,addDep,addRole,addEmp,
                      updateEmployeeRole,UpdateEmployeeMang,getEmpByMang,
