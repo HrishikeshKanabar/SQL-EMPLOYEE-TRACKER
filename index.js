@@ -54,7 +54,7 @@ function appStartOptions(){
             helper.getEmpByDep();
         }else if(opt.initOptions=='11.) Delete a department'){
             helper.deleteDep();
-        }else if(opt=='12.) Delete a role'){
+        }else if(opt.initOptions=='12.) Delete a role'){
             helper.deleteRole();
         }else if(opt.initOptions=='13.) Delete a employee'){
             helper.deleteEmp();
