@@ -20,15 +20,15 @@
 
  App Start       
 :--------------------------------:|
-![App Start]()      
+![App Start](https://github.com/HrishikeshKanabar/SQL-EMPLOYEE-TRACKER/blob/main/assets/emp1.JPG)      
 
 Display data in tables with Conole table lib
 :--------------------------------:|
-![Display data in tables with Conole table lib ]() 
+![Display data in tables with Conole table lib ](https://github.com/HrishikeshKanabar/SQL-EMPLOYEE-TRACKER/blob/main/assets/emp2.JPG) 
 
 Validations
 :--------------------------------:|
-![Validations]() 
+![Validations](https://github.com/HrishikeshKanabar/SQL-EMPLOYEE-TRACKER/blob/main/assets/emp3.JPG) 
   
 ## Requirement achieved 
 
