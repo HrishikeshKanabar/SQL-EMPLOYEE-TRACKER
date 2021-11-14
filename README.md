@@ -20,7 +20,7 @@
 
 Schema Diagram      
 :--------------------------------:|
-![App Start](https://github.com/HrishikeshKanabar/SQL-EMPLOYEE-TRACKER/blob/main/assets/schema.jpg)  
+![App Start](https://github.com/HrishikeshKanabar/SQL-EMPLOYEE-TRACKER/blob/main/assets/schema.JPG)  
 
  App Start       
 :--------------------------------:|
