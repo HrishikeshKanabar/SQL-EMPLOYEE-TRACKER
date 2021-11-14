@@ -18,6 +18,10 @@
 
 ## Full snap of web application
 
+Schema Diagram      
+:--------------------------------:|
+![App Start](https://github.com/HrishikeshKanabar/SQL-EMPLOYEE-TRACKER/blob/main/assets/schema.jpg)  
+
  App Start       
 :--------------------------------:|
 ![App Start](https://github.com/HrishikeshKanabar/SQL-EMPLOYEE-TRACKER/blob/main/assets/emp1.JPG)      
